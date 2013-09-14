@@ -2,7 +2,7 @@ MOCHA_OPTS = --check-leaks
 REPORTER = spec
 
 # Phony targets
-.PHONY: test test-spec
+.PHONY: test test-watch
 
 # Run tests with `make test`
 test: 
