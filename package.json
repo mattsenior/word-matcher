@@ -1,0 +1,17 @@
+{
+    "name": "WordMatcher",
+    "version": "0.0.0",
+    "description": "Word matching",
+    "main": "index",
+    "dependencies": {
+        "underscore": "*"
+    },
+    "devDependencies": {
+        "chai": "*",
+        "mocha": "*"
+    },
+    "scripts": {
+        "test": "make test"
+    },
+    "license": "MIT"
+}
