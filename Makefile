@@ -1,5 +1,5 @@
 MOCHA_OPTS = --check-leaks
-REPORTER = dot
+REPORTER = spec
 
 # Phony targets
 .PHONY: test test-spec
