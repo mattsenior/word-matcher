@@ -1,6 +1,6 @@
 # Word Matching CodeKata
 
-## Getting Started
+## Getting Started and Running Tests
 
 ```sh
 $ npm install
