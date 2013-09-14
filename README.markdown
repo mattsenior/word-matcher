@@ -2,11 +2,7 @@
 
 ## Getting Started
 
-Download, install, and run tests:
-
 ```sh
-$ git@github.com:seniorio/word-matcher.git WordMatcher
-$ cd WordMatcher
 $ npm install
 $ make test
 ```
