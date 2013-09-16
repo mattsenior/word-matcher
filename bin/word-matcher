@@ -18,15 +18,45 @@ var timers      = {};
 
 timers.getMatches = new timer();
 
-var allMatches = matcher.getMatches(inputString, dictionary);
+var tickI = 0;
 
-timers.getMatches.stop();
+var multimeter = require('multimeter');
+var multi = multimeter(process);
 
-console.log('%d %s found', allMatches.length, allMatches.length == 1 ? 'match' : 'matches');
-if (allMatches.length) {
-    console.log('Matches (longest first): %s', formatter.longestFirst(allMatches).join(', '));
-    console.log('Matches (shortest first): %s', formatter.shortestFirst(allMatches).join(', '));
-    console.log('Matches (alphabetical): %s', formatter.alphabetical(allMatches).join(', '));
+var allMatches;
+
+multi.drop(
+    {
+        width: 50,
+        solid: {
+            background: null,
+            text: '='
+        }
+    },
+    function(bar) {
+        allMatches = matcher.getMatches(inputString, dictionary, tick);
+
+        function tick(i, total) {
+            bar.ratio(i, total);
+        }
+
+        postProcess();
+    }
+);
+
+function postProcess() {
+    process.stdout.write('\n');
+
+    timers.getMatches.stop();
+
+    console.log('%d %s found', allMatches.length, allMatches.length == 1 ? 'match' : 'matches');
+    if (allMatches.length) {
+        console.log('Matches (longest first): %s', formatter.longestFirst(allMatches).join(', '));
+        console.log('Matches (shortest first): %s', formatter.shortestFirst(allMatches).join(', '));
+        console.log('Matches (alphabetical): %s', formatter.alphabetical(allMatches).join(', '));
+    }
+
+    console.log('Lookup duration: %s', timers.getMatches.toString());
+
+    process.exit();
 }
-
-console.log('Lookup duration: %s', timers.getMatches.toString());

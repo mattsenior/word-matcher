@@ -41,6 +41,17 @@ describe('Word Matcher', function() {
         it("should handle apostrophes, e.g. O'Neill", function() {
             expect(matcher.getMatches("ei'llon", dictionary)).to.include("O'Neill");
         });
+
+        it('should tick', function() {
+            var tick = sinon.spy();
+
+            matcher.getMatches('abcdefg', dictionary, tick);
+
+            expect(tick.callCount).to.equal(5);
+
+            // Final tick
+            expect(tick).to.have.been.calledWithExactly(dictionary.length, dictionary.length);
+        });
     });
 
     describe('#getMatchesGroupedByLength()', function() {

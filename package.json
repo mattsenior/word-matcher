@@ -4,7 +4,8 @@
     "description": "Word matching",
     "main": "index",
     "dependencies": {
-        "underscore": "*"
+        "underscore": "*",
+        "multimeter": "*"
     },
     "devDependencies": {
         "chai": "*",
