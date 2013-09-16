@@ -1,0 +1,30 @@
+#! /usr/bin/env node
+
+/**
+ * Dependencies
+ */
+var matcher    = require('../'),
+    formatter  = require('../lib/matches-formatter'),
+    dictionary = require('../lib/dictionary'),
+    timer      = require('../lib/timer');
+
+var timers = [];
+
+var userArgs    = process.argv.slice(2),
+    inputString = userArgs[0],
+    timers      = {};
+
+timers.getMatches = new timer();
+
+var allMatches = matcher.getMatches(inputString, dictionary);
+
+timers.getMatches.stop();
+
+console.log('%d %s found', allMatches.length, allMatches.length == 1 ? 'match' : 'matches');
+if (allMatches.length) {
+    console.log('Matches (longest first): %s', formatter.longestFirst(allMatches).join(', '));
+    console.log('Matches (shortest first): %s', formatter.shortestFirst(allMatches).join(', '));
+    console.log('Matches (alphabetical): %s', formatter.alphabetical(allMatches).join(', '));
+}
+
+console.log('Lookup duration: %s', timers.getMatches.toString());

@@ -1,10 +1,16 @@
 # Word Matching CodeKata
 
-## Getting Started and Running Tests
+## Install and run tests
 
 ```sh
 $ npm install
 $ make test
+```
+
+## Usage
+
+```sh
+$ ./bin/word-matcher abcdef
 ```
 
 ## CodeKata Instructions

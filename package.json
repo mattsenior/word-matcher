@@ -10,6 +10,9 @@
         "chai": "*",
         "mocha": "*"
     },
+    "bin": {
+        "word-matcher": "bin/word-matcher"
+    },
     "scripts": {
         "test": "make test"
     },
