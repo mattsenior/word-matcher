@@ -1,18 +1,20 @@
 #! /usr/bin/env node
 
+'use strict';
+
 /**
  * Dependencies
  */
-var matcher    = require('../'),
-    formatter  = require('../lib/matches-formatter'),
-    dictionary = require('../lib/dictionary'),
-    timer      = require('../lib/timer');
+var matcher    = require('../');
+var formatter  = require('../lib/matches-formatter');
+var dictionary = require('../resources/dictionary');
+var timer      = require('../lib/timer');
 
 var timers = [];
 
-var userArgs    = process.argv.slice(2),
-    inputString = userArgs[0],
-    timers      = {};
+var userArgs    = process.argv.slice(2);
+var inputString = userArgs[0];
+var timers      = {};
 
 timers.getMatches = new timer();
 

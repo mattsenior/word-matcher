@@ -8,7 +8,9 @@
     },
     "devDependencies": {
         "chai": "*",
-        "mocha": "*"
+        "mocha": "*",
+        "sinon": "*",
+        "sinon-chai": "*"
     },
     "bin": {
         "word-matcher": "bin/word-matcher"

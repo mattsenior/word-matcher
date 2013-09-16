@@ -1,9 +1,9 @@
-var expect = require('chai').expect;
+'use strict';
 
-describe('WordMatcher', function() {
+describe('Word Matcher', function() {
 
     var matcher    = require('../');
-    var dictionary = require('../lib/dictionary');
+    var dictionary = require('../resources/dictionary-test');
 
     describe('#getMatches()', function() {
 

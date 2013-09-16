@@ -1,6 +1,6 @@
-var expect = require('chai').expect;
+'use strict';
 
-describe('MatchesFormatter', function() {
+describe('Matches Formatter', function() {
 
     var formatter = require('../lib/matches-formatter');
     var matches   = ['cat', 'dog', 'a', 'melon'];

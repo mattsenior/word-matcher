@@ -1,8 +1,13 @@
-var expect = require('chai').expect;
+'use strict';
 
 describe('Timer', function() {
 
     var timer = require('../lib/timer');
+    var clock;
+
+    before(function() {
+        clock = sinon.useFakeTimers();
+    });
 
     it('should know its description', function() {
         var timerA = new timer('hello');
@@ -21,5 +26,12 @@ describe('Timer', function() {
             expect(timerA.duration).to.be.lt(510);
             done();
         }, 500);
+
+        // BEND TIME
+        clock.tick(500);
+    });
+
+    after(function() {
+        clock.restore();
     });
 });
