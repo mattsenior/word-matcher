@@ -13,6 +13,17 @@ $ make test
 $ ./bin/word-matcher abcdef
 ```
 
+### Example output
+
+```sh
+[==================================================] 45425 / 45425
+20 matches found
+Matches (longest first): faced, abed, bade, bead, cafe, deaf, face, fade, Abe, ace, bad, bed, cab, DEC, fed, ad, be, De, Ed, Fe
+Matches (shortest first): ad, be, De, Ed, Fe, Abe, ace, bad, bed, cab, DEC, fed, abed, bade, bead, cafe, deaf, face, fade, faced
+Matches (alphabetical): Abe, abed, ace, ad, bad, bade, be, bead, bed, cab, cafe, De, deaf, DEC, Ed, face, faced, fade, Fe, fed
+Lookup duration: 0.397s
+```
+
 ## CodeKata Instructions
 
 1. Using the letters from a string input, print out the longest word that you can match from the wordlist (attached).
