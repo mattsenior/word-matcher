@@ -16,6 +16,7 @@ $ ./bin/word-matcher abcdef
 ### Example output
 
 ```sh
+$ ./bin/word-matcher abcdef
 [==================================================] 45425 / 45425
 20 matches found
 Matches (longest first): faced, abed, bade, bead, cafe, deaf, face, fade, Abe, ace, bad, bed, cab, DEC, fed, ad, be, De, Ed, Fe
